@@ -36,9 +36,9 @@ public partial class Product
     public string? PhotoPath { get; set; }
 
     [InverseProperty("Product")]
-    public virtual ICollection<LineItem> LineItems { get; set; } = new List<LineItem>();
+    public virtual ICollection<LineItem>? LineItems { get; set; } = new List<LineItem>();
 
     [ForeignKey("VendorId")]
     [InverseProperty("Products")]
-    public virtual Vendor Vendor { get; set; } = null!;
+    public virtual Vendor? Vendor { get; set; } = null!;
 }

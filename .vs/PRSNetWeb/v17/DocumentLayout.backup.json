@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|c:\\repos\\c-sharp-repo\\bmdbnetweb\\prsnetweb\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|c:\\repos\\c-sharp-repo\\bmdbnetweb\\prsnetweb\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,11 +34,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T18:27:10.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "VendorsController.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\VendorsController.cs",
               "RelativeDocumentMoniker": "Controllers\\VendorsController.cs",
@@ -46,20 +63,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
               "ToolTip": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "Controllers\\ProductsController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwBoAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-23T00:20:23.435Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -71,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -83,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "prsdbContext.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Models\\prsdbContext.cs",
               "RelativeDocumentMoniker": "Models\\prsdbContext.cs",
