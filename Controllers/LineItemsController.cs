@@ -24,14 +24,18 @@ namespace PRSNetWeb.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LineItem>>> GetLineItems()
         {
-            return await _context.LineItems.ToListAsync();
+            var lineitem = _context.LineItems.Include(li => li.Product)
+                                             .Include(li => li.Request);
+            return await lineitem.ToListAsync();
         }
 
         // GET: api/LineItems/5
         [HttpGet("{id}")]
         public async Task<ActionResult<LineItem>> GetLineItem(int id)
         {
-            var lineItem = await _context.LineItems.FindAsync(id);
+            var lineItem = await _context.LineItems.Include(li => li.Product)
+                                                   .Include(li => li.Request)
+                                                   .FirstOrDefaultAsync(li => li.Id == id);
 
             if (lineItem == null)
             {
@@ -100,6 +104,15 @@ namespace PRSNetWeb.Controllers
         private bool LineItemExists(int id)
         {
             return _context.LineItems.Any(e => e.Id == id);
+        }
+        [HttpGet("request-id/{requestId}")]
+        public async Task<ActionResult<IEnumerable<LineItem>>> GetLineItemsForRequest(int requestId)
+        {
+            // SELECT * FROM Credit WHERE MovieId = movieId
+            var lineitems = _context.LineItems.Include(li => li.Product)
+                                          .Include(li => li.Request)
+                                          .Where(li => li.RequestId == requestId);
+            return await lineitems.ToListAsync();
         }
     }
 }

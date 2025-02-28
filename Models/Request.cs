@@ -53,5 +53,5 @@ public partial class Request
 
     [ForeignKey("UserId")]
     [InverseProperty("Requests")]
-    public virtual User User { get; set; } = null!;
+    public virtual User? User { get; set; } = null!;
 }
