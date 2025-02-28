@@ -70,16 +70,52 @@ namespace PRSNetWeb.Controllers
 
             return NoContent();
         }
+        // Reject Request
+        [HttpPut("reject{id}")]
+        public async Task<IActionResult> RequestReject(int id, Request request)
+        {
+            if (id != request.Id)
+            {
+                return BadRequest();
+            }
+            request.Status = "Rejected";
+            _context.Entry(request).State = EntityState.Modified;
 
-        // POST: api/Requests
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!RequestExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
         [HttpPost]
-        public async Task<ActionResult<Request>> PostRequest(Request request)
+        public async Task<ActionResult<Request>> CreateRequest(Request request)
         {
             _context.Requests.Add(request);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetRequest", new { id = request.Id }, request);
+            return CreatedAtAction("GetRequest", new { id = request.Id,  }, request);
         }
+        // POST: api/Requests
+        //[HttpPost]
+        //public async Task<ActionResult<Request>> PostRequest(Request request)
+        //{
+        //    _context.Requests.Add(request);
+        //    await _context.SaveChangesAsync();
+
+        //    return CreatedAtAction("GetRequest", new { id = request.Id }, request);
+        //}
 
         // DELETE: api/Requests/5
         [HttpDelete("{id}")]
@@ -99,7 +135,9 @@ namespace PRSNetWeb.Controllers
 
         private bool RequestExists(int id)
         {
-            return _context.Requests.Any(e => e.Id == id);
+            return _context.Requests.Any(r => r.Id == id);
         }
+        // PUT: api/Requests/5
+        
     }
 }

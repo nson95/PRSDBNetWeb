@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Azure.Core;
 using Microsoft.EntityFrameworkCore;
 
 namespace PRSNetWeb.Models;
@@ -54,4 +55,16 @@ public partial class Request
     [ForeignKey("UserId")]
     [InverseProperty("Requests")]
     public virtual User? User { get; set; } = null!;
+
+    public Request(int userId, string requestNumber, string description,
+        string justification, DateOnly dateNeeded)
+    {
+        UserId = userId;
+        RequestNumber = requestNumber;
+        Description = description;
+        Justification = justification;
+        DateNeeded = dateNeeded;
+        this.Status = "New";
+        this.SubmittedDate = DateTime.Now.Date;
+    }
 }
