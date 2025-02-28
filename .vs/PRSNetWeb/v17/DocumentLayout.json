@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|c:\\repos\\c-sharp-repo\\bmdbnetweb\\prsnetweb\\models\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|solutionrelative:models\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|c:\\repos\\c-sharp-repo\\bmdbnetweb\\prsnetweb\\models\\lineitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|solutionrelative:models\\lineitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|c:\\repos\\c-sharp-repo\\bmdbnetweb\\prsnetweb\\controllers\\lineitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|solutionrelative:controllers\\lineitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|c:\\repos\\c-sharp-repo\\bmdbnetweb\\prsnetweb\\models\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|solutionrelative:models\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9C98767D-C7AF-4F27-9D74-5DF745E89D06}|PRSNetWeb.csproj|c:\\repos\\c-sharp-repo\\bmdbnetweb\\prsnetweb\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,7 +58,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "RequestsController.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\RequestsController.cs",
               "RelativeDocumentMoniker": "Controllers\\RequestsController.cs",
@@ -63,25 +67,37 @@
               "ViewState": "AgIAAEAAAAAAAAAAAAAkwDAAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T22:27:08.29Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "LineItem.cs",
+              "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Models\\LineItem.cs",
+              "RelativeDocumentMoniker": "Models\\LineItem.cs",
+              "ToolTip": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Models\\LineItem.cs",
+              "RelativeToolTip": "Models\\LineItem.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAUwBgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T00:45:39.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Request.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Models\\Request.cs",
               "RelativeDocumentMoniker": "Models\\Request.cs",
               "ToolTip": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Models\\Request.cs",
               "RelativeToolTip": "Models\\Request.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAwwDIAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAA/wCgAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T23:47:31.45Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
@@ -89,8 +105,7 @@
               "RelativeToolTip": "Controllers\\UsersController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T22:32:45.721Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T22:32:45.721Z"
             },
             {
               "$type": "Document",
@@ -100,14 +115,14 @@
               "RelativeDocumentMoniker": "Controllers\\LineItemsController.cs",
               "ToolTip": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\LineItemsController.cs",
               "RelativeToolTip": "Controllers\\LineItemsController.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAwG8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAiwG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T22:25:24.32Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Models\\Product.cs",
@@ -119,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "VendorsController.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\VendorsController.cs",
               "RelativeDocumentMoniker": "Controllers\\VendorsController.cs",
@@ -131,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
@@ -143,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -155,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -167,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "prsdbContext.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Models\\prsdbContext.cs",
               "RelativeDocumentMoniker": "Models\\prsdbContext.cs",

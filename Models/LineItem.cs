@@ -23,9 +23,9 @@ public partial class LineItem
 
     [ForeignKey("ProductId")]
     [InverseProperty("LineItems")]
-    public virtual Product Product { get; set; } = null!;
+    public virtual Product? Product { get; set; } = null!;
 
     [ForeignKey("RequestId")]
     [InverseProperty("LineItems")]
-    public virtual Request Request { get; set; } = null!;
+    public virtual Request? Request { get; set; } = null!;
 }
