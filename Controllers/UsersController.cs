@@ -40,6 +40,19 @@ namespace PRSNetWeb.Controllers
 
             return user;
         }
+        [HttpPost("login")]
+        public async Task<ActionResult<User>> Login(UserLogin userLogin)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == userLogin.UserName && u.Password == userLogin.Password);
+
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return user;
+        }
 
         // PUT: api/Users/5
         [HttpPut("{id}")]
