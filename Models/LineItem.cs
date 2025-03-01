@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace PRSNetWeb.Models;
 
 [Index("RequestId", "ProductId", Name = "req_pdt", IsUnique = true)]
+[Table("LineItem")]
 public partial class LineItem
 {
     [Key]

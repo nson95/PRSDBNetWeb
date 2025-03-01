@@ -374,6 +374,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PRSNetWeb.Controllers.RequestsController",
+    "Method": "SubmitRequest",
+    "RelativePath": "api/Requests/submit{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "PRSNetWeb.Models.Request",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PRSNetWeb.Controllers.UsersController",
     "Method": "GetUsers",
     "RelativePath": "api/Users",

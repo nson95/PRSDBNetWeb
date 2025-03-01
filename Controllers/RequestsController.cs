@@ -49,8 +49,40 @@ namespace PRSNetWeb.Controllers
             {
                 return BadRequest();
             }
-
+            
             _context.Entry(request).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!RequestExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+        // PUT: api/Requests/5
+        [HttpPut("submit{id}")]
+        public async Task<IActionResult> SubmitRequest(int id, Request request)
+        {
+            if (id != request.Id)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                request.Status = "Submitted";
+                _context.Entry(request).State = EntityState.Modified;
+            }
 
             try
             {
