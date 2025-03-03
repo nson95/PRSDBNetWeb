@@ -62,9 +62,9 @@
               "Title": "RequestsController.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\RequestsController.cs",
               "RelativeDocumentMoniker": "Controllers\\RequestsController.cs",
-              "ToolTip": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\RequestsController.cs*",
-              "RelativeToolTip": "Controllers\\RequestsController.cs*",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAcwFcAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\RequestsController.cs",
+              "RelativeToolTip": "Controllers\\RequestsController.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAmwJoAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T22:27:08.29Z",
               "IsPinned": true,
@@ -76,9 +76,9 @@
               "Title": "LineItemsController.cs",
               "DocumentMoniker": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\LineItemsController.cs",
               "RelativeDocumentMoniker": "Controllers\\LineItemsController.cs",
-              "ToolTip": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\LineItemsController.cs*",
-              "RelativeToolTip": "Controllers\\LineItemsController.cs*",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAuwHYAAAA3AAAAAAAAAA==",
+              "ToolTip": "C:\\Repos\\c-sharp-repo\\BMDBNetWeb\\PRSNetWeb\\Controllers\\LineItemsController.cs",
+              "RelativeToolTip": "Controllers\\LineItemsController.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAHcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T22:25:24.32Z",
               "EditorCaption": ""
@@ -165,8 +165,7 @@
               "RelativeToolTip": "Models\\Request.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T23:47:31.45Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T23:47:31.45Z"
             },
             {
               "$type": "Document",

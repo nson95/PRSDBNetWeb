@@ -59,6 +59,7 @@ namespace PRSNetWeb.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+                RecalculateLineItems(id);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -81,6 +82,7 @@ namespace PRSNetWeb.Controllers
         {
             _context.LineItems.Add(lineItem);
             await _context.SaveChangesAsync();
+            RecalculateLineItems(lineItem.RequestId);
 
             return CreatedAtAction("GetLineItem", new { id = lineItem.Id }, lineItem);
         }
@@ -97,6 +99,7 @@ namespace PRSNetWeb.Controllers
 
             _context.LineItems.Remove(lineItem);
             await _context.SaveChangesAsync();
+            RecalculateLineItems(lineItem.RequestId);
 
             return NoContent();
         }
@@ -125,7 +128,7 @@ namespace PRSNetWeb.Controllers
         private void RecalculateLineItems(int requestId)
         {
             var request = _context.Requests.Find(requestId);
-            var rLi = _context.LineItems.Where(li => li.RequestId == requestId);
+            var rLi = _context.LineItems.Include(li => li.Product).Where(li => li.RequestId == requestId);
             decimal sum = 0.0m; 
             foreach (LineItem li in rLi)
             {
