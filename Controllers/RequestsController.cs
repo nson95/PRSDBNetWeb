@@ -86,6 +86,14 @@ namespace PRSNetWeb.Controllers
             _context.SaveChanges();
             return request;
         }
+        // PUT: api/Requests/list-review/5
+        [HttpGet("list-review/{id}")]
+        public List<Request> ListRequestReview(int id)
+        {
+            List<Request> requestList = _context.Requests.Where(x => x.UserId != id && x.Status == "REVIEW").ToList();
+
+            return requestList;
+        }
         // PUT: api/Requests/approve/5
         [HttpPut("approve/{id}")]
         public Request ApproveRequest(int id)
@@ -95,14 +103,6 @@ namespace PRSNetWeb.Controllers
 
             _context.SaveChanges();
             return request;
-        }
-        // PUT: api/Requests/list-review/5
-        [HttpGet("list-review/{id}")]
-        public List<Request> ListRequestReview(int id)
-        {
-            List<Request> requestList = _context.Requests.Where(x => x.UserId != id && x.Status == "REVIEW").ToList();
-
-            return requestList;
         }
         //PUT: api/Requests/reject/5
         [HttpPut("reject/{id}")]
