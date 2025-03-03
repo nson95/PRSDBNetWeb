@@ -120,6 +120,7 @@ namespace PRSNetWeb.Controllers
         [HttpPost]
         public async Task<ActionResult<Request>> CreateRequest(Request request)
         {
+            request.RequestNumber = getNextRequestNumber();
             _context.Requests.Add(request);
             await _context.SaveChangesAsync();
 
@@ -140,7 +141,35 @@ namespace PRSNetWeb.Controllers
 
             return NoContent();
         }
+        private string getNextRequestNumber()
+        {
+            // requestNumber format: R2409230011
+            // 11 chars, 'R' + YYMMDD + 4 digit # w/ leading zeros
+            string requestNbr = "R";
+            // add YYMMDD string
+            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+            requestNbr += today.ToString("yyMMdd");
+            // get maximum request number from db
+            string maxReqNbr = _context.Requests.Max(r => r.RequestNumber);
+            String reqNbr = "";
+            if (maxReqNbr != null)
+            {
+                // get last 4 characters, convert to number
+                String tempNbr = maxReqNbr.Substring(7);
+                int nbr = Int32.Parse(tempNbr);
+                nbr++;
+                // pad w/ leading zeros
+                reqNbr += nbr;
+                reqNbr = reqNbr.PadLeft(4, '0');
+            }
+            else
+            {
+                reqNbr = "0001";
+            }
+            requestNbr += reqNbr;
+            return requestNbr;
 
+        }
         private bool RequestExists(int id)
         {
             return _context.Requests.Any(r => r.Id == id);
