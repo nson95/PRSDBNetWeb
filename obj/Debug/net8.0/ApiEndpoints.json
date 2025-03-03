@@ -380,6 +380,32 @@
   },
   {
     "ContainingType": "PRSNetWeb.Controllers.RequestsController",
+    "Method": "ApproveRequest",
+    "RelativePath": "api/Requests/approve/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PRSNetWeb.Models.Request",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PRSNetWeb.Controllers.RequestsController",
     "Method": "ListRequestReview",
     "RelativePath": "api/Requests/list-review/{id}",
     "HttpMethod": "GET",
@@ -407,7 +433,7 @@
   {
     "ContainingType": "PRSNetWeb.Controllers.RequestsController",
     "Method": "RequestReject",
-    "RelativePath": "api/Requests/request-reject/{id}",
+    "RelativePath": "api/Requests/reject/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

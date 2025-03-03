@@ -70,7 +70,7 @@ namespace PRSNetWeb.Controllers
 
             return NoContent();
         }
-        // PUT: api/Requests/5
+        // PUT: api/Requests/submit-review/5
         [HttpPut("submit-review/{id}")]
         public Request SubmitRequest(int id)
         {
@@ -86,7 +86,17 @@ namespace PRSNetWeb.Controllers
             _context.SaveChanges();
             return request;
         }
-        // PUT: api/Requests/5
+        // PUT: api/Requests/approve/5
+        [HttpPut("approve/{id}")]
+        public Request ApproveRequest(int id)
+        {
+            Request request = _context.Requests.Find(id);
+            request.Status = "APPROVED";
+
+            _context.SaveChanges();
+            return request;
+        }
+        // PUT: api/Requests/list-review/5
         [HttpGet("list-review/{id}")]
         public List<Request> ListRequestReview(int id)
         {
@@ -94,8 +104,8 @@ namespace PRSNetWeb.Controllers
 
             return requestList;
         }
-        //PUT: api/Requests/request-reject/5
-        [HttpPut("request-reject/{id}")]
+        //PUT: api/Requests/reject/5
+        [HttpPut("reject/{id}")]
         public Request RequestReject(int id, Request request)
         {
             if (request.ReasonForRejection == null)
@@ -106,51 +116,7 @@ namespace PRSNetWeb.Controllers
             }
             return request;
         }
-        ////PUT: api/Requests/5
-        //[HttpPut("request-reject/{id}")]
-        //public Request RequestReject(int id, Request request)
-        //{
-        //    request.Status = "REJECTED";
-        //    _context.SaveChanges();
-        //    return request;
-        //}
-        //[HttpPut("request-reject/{id}")]
-        //public Request RequestReject(int id)
-        //{
-        //    Request request = _context.Requests.Find(id);
-        //    request.Status = "REJECTED";
-        //    _context.SaveChanges();
-        //    return request;
-        //}
-        //// Reject Request
-        //[HttpPut("reject{id}")]
-        //public async Task<IActionResult> RequestReject(int id, Request request)
-        //{
-        //    if (id != request.Id)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    request.Status = "Rejected";
-        //    //_context.Entry(request).State = EntityState.Modified;
-
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!RequestExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
-
-        //    return NoContent();
-        //}
+        //POST: api/Requests
         [HttpPost]
         public async Task<ActionResult<Request>> CreateRequest(Request request)
         {
@@ -159,17 +125,7 @@ namespace PRSNetWeb.Controllers
 
             return CreatedAtAction("GetRequest", new { id = request.Id,  }, request);
         }
-        // POST: api/Requests
-        //[HttpPost]
-        //public async Task<ActionResult<Request>> PostRequest(Request request)
-        //{
-        //    _context.Requests.Add(request);
-        //    await _context.SaveChangesAsync();
-
-        //    return CreatedAtAction("GetRequest", new { id = request.Id }, request);
-        //}
-
-        // DELETE: api/Requests/5
+        //DELETE: api/Requests/delete/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRequest(int id)
         {
