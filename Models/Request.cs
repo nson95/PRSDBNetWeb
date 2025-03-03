@@ -56,15 +56,14 @@ public partial class Request
     [InverseProperty("Requests")]
     public virtual User? User { get; set; } = null!;
 
-    public Request(int userId, string requestNumber, string description,
+    public Request(int userId, string description,
         string justification, DateOnly dateNeeded)
     {
         UserId = userId;
-        RequestNumber = requestNumber;
         Description = description;
         Justification = justification;
         DateNeeded = dateNeeded;
-        this.Status = "New";
+        this.Status = "NEW";
         this.SubmittedDate = DateTime.Now.Date;
     }
 }

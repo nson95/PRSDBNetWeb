@@ -75,7 +75,7 @@ namespace PRSNetWeb.Controllers
         public Request SubmitRequest(int id)
         {
             Request request = _context.Requests.Find(id);
-            if (request.Total >= 50) {
+            if (request.Total <= 50) {
                 request.Status = "APPROVED";
             }
             else
@@ -108,7 +108,7 @@ namespace PRSNetWeb.Controllers
         [HttpPut("reject/{id}")]
         public Request RequestReject(int id, Request request)
         {
-            if (request.ReasonForRejection == null)
+            if (request.ReasonForRejection != null)
             {
                 request.Status = "REJECTED";
                 _context.Entry(request).State = EntityState.Modified;
