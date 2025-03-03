@@ -71,66 +71,86 @@ namespace PRSNetWeb.Controllers
             return NoContent();
         }
         // PUT: api/Requests/5
-        [HttpPut("submit{id}")]
-        public async Task<IActionResult> SubmitRequest(int id, Request request)
+        [HttpPut("submit-review/{id}")]
+        public Request SubmitRequest(int id)
         {
-            if (id != request.Id)
-            {
-                return BadRequest();
+            Request request = _context.Requests.Find(id);
+            if (request.Total >= 50) {
+                request.Status = "APPROVED";
             }
             else
             {
-                request.Status = "Submitted";
-                _context.Entry(request).State = EntityState.Modified;
+                request.Status = "REVIEW";
             }
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!RequestExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            _context.SaveChanges();
+            return request;
         }
-        // Reject Request
-        [HttpPut("reject{id}")]
-        public async Task<IActionResult> RequestReject(int id, Request request)
+        // PUT: api/Requests/5
+        [HttpGet("list-review/{id}")]
+        public List<Request> ListRequestReview(int id)
         {
-            if (id != request.Id)
-            {
-                return BadRequest();
-            }
-            request.Status = "Rejected";
-            _context.Entry(request).State = EntityState.Modified;
+            List<Request> requestList = _context.Requests.Where(x => x.UserId != id && x.Status == "REVIEW").ToList();
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!RequestExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return requestList;
         }
+        //PUT: api/Requests/request-reject/5
+        [HttpPut("request-reject/{id}")]
+        public Request RequestReject(int id, Request request)
+        {
+            if (request.ReasonForRejection == null)
+            {
+                request.Status = "REJECTED";
+                _context.Entry(request).State = EntityState.Modified;
+                _context.SaveChanges();
+            }
+            return request;
+        }
+        ////PUT: api/Requests/5
+        //[HttpPut("request-reject/{id}")]
+        //public Request RequestReject(int id, Request request)
+        //{
+        //    request.Status = "REJECTED";
+        //    _context.SaveChanges();
+        //    return request;
+        //}
+        //[HttpPut("request-reject/{id}")]
+        //public Request RequestReject(int id)
+        //{
+        //    Request request = _context.Requests.Find(id);
+        //    request.Status = "REJECTED";
+        //    _context.SaveChanges();
+        //    return request;
+        //}
+        //// Reject Request
+        //[HttpPut("reject{id}")]
+        //public async Task<IActionResult> RequestReject(int id, Request request)
+        //{
+        //    if (id != request.Id)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    request.Status = "Rejected";
+        //    //_context.Entry(request).State = EntityState.Modified;
+
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!RequestExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+
+        //    return NoContent();
+        //}
         [HttpPost]
         public async Task<ActionResult<Request>> CreateRequest(Request request)
         {

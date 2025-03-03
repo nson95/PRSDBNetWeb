@@ -114,5 +114,25 @@ namespace PRSNetWeb.Controllers
                                           .Where(li => li.RequestId == requestId);
             return await lineitems.ToListAsync();
         }
+        // PUT: api/LineItems/5
+        [HttpGet("lines-for-req/{id}")]
+        public List<LineItem> ListRequestReview(int id)
+        {
+            List<LineItem> liList = _context.LineItems.Where(li => li.RequestId == id).ToList();
+
+            return liList;
+        }
+        private void RecalculateLineItems(int requestId)
+        {
+            var request = _context.Requests.Find(requestId);
+            var rLi = _context.LineItems.Where(li => li.RequestId == requestId);
+            decimal sum = 0.0m; 
+            foreach (LineItem li in rLi)
+            {
+                sum += (li.Quantity * li.Product.Price);
+            }
+            request.Total = sum;
+            _context.SaveChanges();
+        }
     }
 }

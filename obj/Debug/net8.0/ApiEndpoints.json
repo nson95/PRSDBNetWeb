@@ -110,6 +110,32 @@
   },
   {
     "ContainingType": "PRSNetWeb.Controllers.LineItemsController",
+    "Method": "ListRequestReview",
+    "RelativePath": "api/LineItems/lines-for-req/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[PRSNetWeb.Models.LineItem, PRSNetWeb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PRSNetWeb.Controllers.LineItemsController",
     "Method": "GetLineItemsForRequest",
     "RelativePath": "api/LineItems/request-id/{requestId}",
     "HttpMethod": "GET",
@@ -354,8 +380,34 @@
   },
   {
     "ContainingType": "PRSNetWeb.Controllers.RequestsController",
+    "Method": "ListRequestReview",
+    "RelativePath": "api/Requests/list-review/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[PRSNetWeb.Models.Request, PRSNetWeb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PRSNetWeb.Controllers.RequestsController",
     "Method": "RequestReject",
-    "RelativePath": "api/Requests/reject{id}",
+    "RelativePath": "api/Requests/request-reject/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -371,12 +423,22 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "PRSNetWeb.Models.Request",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "PRSNetWeb.Controllers.RequestsController",
     "Method": "SubmitRequest",
-    "RelativePath": "api/Requests/submit{id}",
+    "RelativePath": "api/Requests/submit-review/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -385,14 +447,19 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
-      },
-      {
-        "Name": "request",
-        "Type": "PRSNetWeb.Models.Request",
-        "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "PRSNetWeb.Models.Request",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "PRSNetWeb.Controllers.UsersController",
